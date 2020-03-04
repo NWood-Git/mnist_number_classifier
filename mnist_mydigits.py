@@ -16,19 +16,25 @@ import numpy as np
 # image = Image.open('one_written.jpeg').convert('L') # Got 1
 # image = Image.open('two_written.jpeg').convert('L') # Got 2
 # image = Image.open('three_written.jpeg').convert('L') # Got 3
+# image = Image.open('three_jarret_written.jpeg').convert('L')
 # image = Image.open('four_written.jpeg').convert('L') # Got 4
 # image = Image.open('five_written.jpeg').convert('L') # Got 5
 # image = Image.open('six_written.jpeg').convert('L') # Got 8 but 6 was close
-image = Image.open('six2_written.jpeg').convert('L') #Got 6
+# image = Image.open('six2_written.jpeg').convert('L') #Got 6
 # image = Image.open('seven_written.png').convert('L') # Got 7
 # image = Image.open('eight_written.jpeg').convert('L') # Got 8
+# image = Image.open('eight2_written.jpeg').convert('L') # Got 3 - was an 8 converted  from a 3
 # image = Image.open('nine_written.jpeg').convert('L') # Got 4 -- 9 was a close 2nd
-# image = Image.open('nine_written.jpeg').convert('L') # Got 4 -- 9 was 2nd 
+# image = Image.open('nine2_written.jpeg').convert('L') # Got 
+# image = Image.open('nine_cr.jpeg').convert('L') #got it right - 8
+# image = Image.open('eight_cr.jpeg').convert('L') # it thought it was a 3
+image = Image.open('jeff_seven.jpeg').convert('L') 
+
 
 # Making the image into pixels so the model can read it
 pix_val = []
 for x in list(image.getdata()):
-    pixel = abs(x-255) / 255
+    pixel = abs(x-255) / 255 #inverted black and whites and normalized (0 is white and black is 1?)
     pix_val.append(pixel)
 
 real_pixels = []
